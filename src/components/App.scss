@@ -2,4 +2,60 @@
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
+  display: flex;
+  overflow: hidden;
+
+  > div {
+    height: 100%;
+    flex: 0 0 auto;
+    // canvas
+    &:nth-child(1) {
+      width: 100vw;
+    }
+  }
+}
+
+.info {
+  width: 300px;
+  position: relative;
+  background-color: rgba($color: #fff, $alpha: 0.1);
+  transition: margin-left 0.4s ease-in-out;
+
+  &.pinned {
+    margin-left: -300px;
+  }
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 40px;
+    margin-left: -40px;
+    background-color: rgba($color: #000, $alpha: 0);
+    transition: width 0.1s 0.4s;
+  }
+
+  &:hover {
+    margin-left: -300px;
+    &::before { width: 0; }
+  }
+
+  .pin {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 10px;
+    height: 20px;
+    background: url('./../../asset/image/pin.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transform: rotate(45deg);
+    transition: transform 0.1s ease-in-out;
+
+    &.rotate {
+      transform: rotate(0deg);
+    }
+  }
 }

@@ -6,8 +6,12 @@ class PixiMgr {
   app: PIXI.Application;
 
   constructor() {
-    this.app = new PIXI.Application(window.innerWidth, window.innerHeight, { antialias: true });
+    const options = { antialias: true };
+
+    this.app = new PIXI.Application(options);
   }
+
+  setSize = (w: number, h: number) => this.app.renderer.resize(w, h);
 
   getView = () => this.app.view;
 }
