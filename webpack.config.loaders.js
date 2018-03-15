@@ -30,6 +30,6 @@ module.exports = [
   {
     test: /\.png/,
     exclude: /node_modules/,
-    loader: "url-loader?limit=10000&mimetype=image/jpg&name=assets/images/[hash].[ext]"
+    loader: "url-loader?limit=10000&mimetype=image/png&name=assets/images/[hash].[ext]"
   },
 ];
