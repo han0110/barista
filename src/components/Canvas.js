@@ -13,21 +13,24 @@ class Canvas extends Component<{}> {
     super();
     this.pixiMgr = new PixiMgr();
 
-    window.onresize = this.resize;
+    this.init();
   }
 
   componentDidMount() {
-    this.resize();
+    this.pixiMgr.setSize(640, 480);
     this.canvas.appendChild(this.pixiMgr.getView());
   }
 
-  resize = () => {
-    const { clientWidth: width, clientHeight: height } = this.canvas;
-    this.pixiMgr.setSize(width, height);
+  init = () => {
+    this.pixiMgr.createGird();
   }
 
   render() {
-    return <div className={styles.canvas} ref={(div) => { if (div) this.canvas = div; }} />;
+    return (
+      <div className={styles.canvas}>
+        <div ref={(div) => { if (div) this.canvas = div; }} />
+      </div>
+    );
   }
 }
 

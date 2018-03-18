@@ -23,7 +23,7 @@ class Control extends Component<{}, State> {
   constructor() {
     super();
     this.state = {
-      active: '',
+      active: 'scanner',
       objects: [
         { name: 'apple', id: 'ub12d' },
         { name: 'banana', id: 'd52l1' },
