@@ -30,6 +30,11 @@ module.exports = [
   {
     test: /\.png/,
     exclude: /node_modules/,
-    loader: "url-loader?limit=10000&mimetype=image/png&name=assets/images/[hash].[ext]"
+    loader: "url-loader?limit=10000&mimetype=image/png&name=asset/image/[hash].[ext]"
+  },
+  {
+    test: /\.otf/,
+    exclude: /node_modules/,
+    loader: "url-loader?limit=10000&mimetype=font/otf&name=asset/font/[name].[ext]"
   },
 ];

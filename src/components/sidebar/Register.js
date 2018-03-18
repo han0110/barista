@@ -2,9 +2,11 @@
 
 import React from 'react';
 
+import styles from './Sidebar.scss';
+
 const Register = () => (
-  <div key="register">
-    register
+  <div key="register" className={styles.wrapper}>
+    <div className={styles.header} content="register" />
   </div>
 );
 

@@ -6,7 +6,7 @@ class PixiMgr {
   app: PIXI.Application;
 
   constructor() {
-    const options = { antialias: true, backgroundColor: 0x101010 };
+    const options = { antialias: true, backgroundColor: 0X282B32 };
 
     this.app = new PIXI.Application(options);
   }

@@ -10,8 +10,8 @@ class App extends Component<{}> {
   render() {
     return (
       <div className={styles.wrapper}>
-        <Canvas />
         <Control />
+        <Canvas />
       </div>
     );
   }
