@@ -55,7 +55,7 @@ class Control extends Component<{}, State> {
             activities.map(({ name, icon }) => (
               <div
                 className={styles.activity}
-                style={{ maskImage: `url(${icon})`, backgroundColor: `${active === name ? '#a0a0a0' : ''}` }}
+                style={{ maskImage: `url(${icon})`, opacity: `${active === name ? 1 : ''}` }}
                 onClick={() => onClick(name)}
                 role="button"
                 tabIndex={0}

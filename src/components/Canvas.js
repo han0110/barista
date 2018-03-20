@@ -1,19 +1,23 @@
 // @flow
 
 import React, { Component } from 'react';
+import io from 'socket.io-client';
 import PixiMgr from '../pixi/PixiMgr';
 
 import styles from './App.scss';
+import config from '../../share/config';
 
 class Canvas extends Component<{}> {
-  pixiMgr: PixiMgr;
   canvas: HTMLDivElement;
+  pixiMgr: PixiMgr;
+  socket: io;
 
   constructor() {
     super();
     this.pixiMgr = new PixiMgr();
 
-    this.init();
+    this.pixiInit();
+    this.socketInit();
   }
 
   componentDidMount() {
@@ -21,8 +25,15 @@ class Canvas extends Component<{}> {
     this.canvas.appendChild(this.pixiMgr.getView());
   }
 
-  init = () => {
+  pixiInit = () => {
     this.pixiMgr.createGird();
+  }
+
+  socketInit = () => {
+    this.socket = io(`localhost:${config.socketPort}`);
+
+    this.socket.on('objects', () => {
+    });
   }
 
   render() {

@@ -8,14 +8,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const APP_DIR = path.resolve(__dirname, './src');
 const MODULES_DIR = path.resolve(__dirname, './node_modules');
 
-const { dependencies } = require('./package.json');
 const loaders = require('./webpack.config.loaders');
 
 const config = {
   devtool: 'cheap-module-source-map',
   entry: {
     app: ['babel-polyfill', path.resolve(APP_DIR, 'index.js')],
-    vendor: Object.keys(dependencies),
+    vendor: [
+      'pixi.js',
+      'react',
+      'react-dom',
+    ],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

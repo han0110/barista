@@ -16,22 +16,19 @@ class Grid extends Sprite {
 
     const lineG = new Graphics();
 
-    const xOffset = (window.innerWidth - width) / 2;
-    const yOffset = (window.innerHeight - height) / 2;
-
     let x = unit;
     let y = unit;
     lineG.lineStyle(2, 0X00FF00, 0.2);
 
     while (x <= width - unit) {
-      lineG.moveTo(x + xOffset, yOffset);
-      lineG.lineTo(x + xOffset, yOffset + height);
+      lineG.moveTo(x, 0);
+      lineG.lineTo(x, height);
       x += unit;
     }
 
     while (y <= height - unit) {
-      lineG.moveTo(xOffset, y + yOffset);
-      lineG.lineTo(xOffset + width, y + yOffset);
+      lineG.moveTo(0, y);
+      lineG.lineTo(width, y);
       y += unit;
     }
 
