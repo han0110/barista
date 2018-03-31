@@ -3,75 +3,134 @@
   height: 100vh;
   position: relative;
   box-sizing: border-box;
-  display: flex;
   overflow: hidden;
   font-family: 'Quicksand-Regular';
   font-size: 20px;
-
-  * {
-    height: 100%;
-  }
-}
-
-.canvas {
-  flex: 1 1 auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #282b32;
 
-  div {
-    width: 640px;
-    height: 480px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 4px 4px 13px -4px #000;
-  }
-}
-
-.control {
-  display: flex;
-}
-
-.activitybar {
-  width: 80px;
-  background-color: rgba($color: #3a3a3a, $alpha: 1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  .activity {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    margin: 15px;
-    cursor: pointer;
-    mask-repeat: no-repeat;
-    mask-size: 100%;
-    background-color: rgba($color: #a0a0a0, $alpha: 1);
-    opacity: 0.4;
-
-    &::before {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-color: inherit;
-      content: ' ';
-    }
-
-    &:hover { opacity: 0.7; }
-    &:active { opacity: 1; }
+  > div {
+    flex: 1 0 auto;
   }
 }
 
 .sidebar {
-  display: none;
-  width: 300px;
-  background-color: rgba($color: #2a2a2a, $alpha: 1);
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
 
-  &.show {
+  .icon {
+    height: 80px;
+    padding: 20px;
+    background-color: #e67e22;
+  }
+
+  .links {
     display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #d35400;
+
+    .link {
+      margin: 5px 0;
+      color: #e0e0e0;
+
+      &::before {
+        content: attr(label);
+        font-size: 1.5rem;
+      }
+    }
   }
 }
+
+.child {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  > div:nth-child(2) {
+    flex: 1 1 auto;
+    margin-top: 80px;
+    background-color: #e0e0e0;
+  }
+
+  .title {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    line-height: 40px;
+    padding: 20px;
+    background-color: #eb974e;
+
+    &::before {
+      content: attr(label);
+      font-size: 2rem;
+    }
+  }
+}
+
+// .canvas {
+//   flex: 1 1 auto;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   background-color: #282b32;
+
+//   div {
+//     width: 640px;
+//     height: 480px;
+//     border-radius: 10px;
+//     overflow: hidden;
+//     box-shadow: 4px 4px 13px -4px #000;
+//   }
+// }
+
+// .control {
+//   display: flex;
+// }
+
+// .activitybar {
+//   width: 80px;
+//   background-color: rgba($color: #3a3a3a, $alpha: 1);
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+
+//   .activity {
+//     position: relative;
+//     width: 50px;
+//     height: 50px;
+//     margin: 15px;
+//     cursor: pointer;
+//     mask-repeat: no-repeat;
+//     mask-size: 100%;
+//     background-color: rgba($color: #a0a0a0, $alpha: 1);
+//     opacity: 0.4;
+
+//     &::before {
+//       position: absolute;
+//       top: 0;
+//       right: 0;
+//       bottom: 0;
+//       left: 0;
+//       background-color: inherit;
+//       content: ' ';
+//     }
+
+//     &:hover { opacity: 0.7; }
+//     &:active { opacity: 1; }
+//   }
+// }
+
+// .sidebar {
+//   display: none;
+//   width: 300px;
+//   background-color: rgba($color: #2a2a2a, $alpha: 1);
+
+//   &.show {
+//     display: flex;
+//   }
+// }

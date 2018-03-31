@@ -1,0 +1,15 @@
+.wrapper {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 15px 0;
+}
+
+.vedio {
+  max-width: 640px;
+  max-height: 480px;
+}
