@@ -10,4 +10,4 @@
 module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/internals/flow/CSSModule.js.flow'
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
 suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
-suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment=\\(.\\|\n\\)*\\$FlowIgnore

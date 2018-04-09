@@ -28,11 +28,11 @@ class Dashboard extends Component {
     });
   }
 
-  toggle = (time: number) => {
+  toggle = (id: number) => {
     const { beans } = this.state;
 
     for (let i = 0; i < beans.length; i += 1) {
-      if (beans[i].time === time) {
+      if (beans[i].id === id) {
         beans[i].show = !beans[i].show;
         break;
       }
@@ -69,7 +69,7 @@ class Dashboard extends Component {
               <div
                 className={b.show ? styles.spread : styles.item}
                 key={b.time}
-                onClick={() => this.toggle(b.time)}
+                onClick={() => this.toggle(b.id)}
                 role="button"
                 tabIndex={0}
               >
