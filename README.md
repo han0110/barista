@@ -14,3 +14,8 @@
 ├── dist                    # compiled front-end code
 └── ...                     # other config for front-end
 ```
+
+## Getting start
+
+...
+
