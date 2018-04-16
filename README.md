@@ -1,5 +1,7 @@
 # Barista
 
+User interface for our AI bean picker - Barista
+
 ## File Structure
 
 ```
@@ -8,10 +10,9 @@
 │   │   ├── index.py        # main function
 │   │   └── ...
 │   ├── server.js           # server to handle all event
-│   └── socket.js           # socket for scanner and front-end to connect
+│   └── socket.js
 ├── src                     # front-end code
-│   └── ...                 # built by React
-├── dist                    # compiled front-end code
+│   └── ...
 └── ...                     # other config for front-end
 ```
 
