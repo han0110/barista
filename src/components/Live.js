@@ -8,6 +8,8 @@ class Live extends Component<{}> {
 
   async componentDidMount() {
     this.cam0.srcObject = await navigator.mediaDevices.getUserMedia({ video: true });
+    setInterval(() => {
+    }, 1000);
     this.cam1.srcObject = await navigator.mediaDevices.getUserMedia({ video: true });
   }
 
